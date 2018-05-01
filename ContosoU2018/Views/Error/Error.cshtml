@@ -1,0 +1,28 @@
+﻿<div class="container my-4">
+    @{
+        if (Model == 404)
+        {
+            // page not found error
+            ViewData["Title"] = "Page Not Found";
+            <h2>Page Not Found</h2>
+            <h3 class="text-danger">Sorry, but the page you are looking for does not exist.</h3>
+            <div class="text-center">
+                <div class="fas fa-exclamation-triangle" style="font-size:10em"></div>
+            </div>
+        }
+        else if (Model == 500)
+        {
+            // internal server error
+            ViewData["Title"] = "Internal Server Error";
+            <h2>Internal Server Error</h2>
+            <h3 class="text-danger">Sorry, but there was an internal server error. Please try again later.</h3>
+            <div class="text-center">
+                <div class="fas fa-fire" style="font-size:10em"></div>
+            </div>
+        }
+        <p>You may return to the <a asp-action="Index" asp-controller="Home">home</a> page</p>
+
+    }
+</div>
+
+

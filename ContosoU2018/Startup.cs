@@ -33,6 +33,13 @@ namespace ContosoU2018
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            // brettdinelli
+            // adding the School Data Services
+            services.AddDbContext<SchoolContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            // end brettdinelli
+
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
@@ -54,6 +61,9 @@ namespace ContosoU2018
             }
 
             app.UseStaticFiles();
+
+            // brettdinelli: custom error pages
+            app.UseStatusCodePagesWithReExecute("/Error/{0}");
 
             app.UseAuthentication();
 

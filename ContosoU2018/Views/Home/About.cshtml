@@ -1,7 +1,16 @@
 ﻿@{
     ViewData["Title"] = "About";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+<div class="container">
+    <div class="row my-4">
+        <div class="col-lg-4">
+            <img class="img-fluid rounded" src="~/images/About.jpg" alt="About" />
 
-<p>Use this area to provide additional information.</p>
+        </div>
+        <div class="col-lg-8">
+            <h2>@ViewData["Title"]</h2>
+            <p>Use this area to provide additional information.</p>
+            <p>More stuff here.</p>
+        </div>
+    </div>
+</div>
