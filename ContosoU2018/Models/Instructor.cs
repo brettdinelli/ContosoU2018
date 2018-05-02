@@ -14,5 +14,14 @@ namespace ContosoU2018.Models
         [DataType(DataType.Date)]
         public DateTime HireDate { get; set; }
 
+        // add navigation properties
+        // an instructor can teach any number of courses, so Courses is defined
+        // as a collection of the CourseAssignment Entity
+        public virtual ICollection<CourseAssignment> Courses { get; set; }
+
+        // an instructor can only have, at most, one office, so the OfficeAssignment
+        // property holds a single OfficeAssignment Entity, which may be null if no 
+        // office is assigned
+        public virtual OfficeAssignment OfficeAssignment { get; set; }
     }
 }
